@@ -1,4 +1,4 @@
-package com.yunxi.yunxiruleengine.stratege;
+package com.yunxi.yunxiruleengine.strategy.updatexiaoming;
 
 
 import com.yunxi.yunxiruleengine.entity.Order;
@@ -10,10 +10,10 @@ import static com.yunxi.yunxiruleengine.xiaoming.JavaScoreExample.addScore;
  * @Date: 2019-02-16
  * @Description:
  */
-public class Strategy500 implements Strategy {
+public class Strategy1000 implements Strategy {
     @Override
     public void cal(Order order) {
-        order.setScore(500);
+        order.setScore(1000);
         addScore(order);
     }
 }
