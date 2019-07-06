@@ -11,6 +11,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @Author: 无双老师【云析学院】
+ * @Date: 2019-07-06
+ * @Description: Drools积分
+ */
 public class DroolsScoreExample {
 
 
@@ -43,11 +48,11 @@ public class DroolsScoreExample {
         List<Order> orderList = getInitData();
 
         for (int i = 0; i < orderList.size(); i++) {
-            Order o = orderList.get(i);
-            ksession.insert(o);
+            Order order = orderList.get(i);
+            ksession.insert(order);
             ksession.fireAllRules();
             // 执行完规则后, 执行相关的逻辑
-            addScore(o);
+            addScore(order);
         }
 
         ksession.dispose();
@@ -55,8 +60,8 @@ public class DroolsScoreExample {
     }
 
   
-    private static void addScore(Order o){  
-        System.out.println("用户" + o.getUser().getName() + "享受额外增加积分: " + o.getScore());  
+    private static void addScore(Order order){
+        System.out.println("用户" + order.getUser().getName() + "享受额外增加积分: " + order.getScore());
     }  
       
     private static List<Order> getInitData() throws Exception {  
@@ -65,41 +70,40 @@ public class DroolsScoreExample {
         {  
             Order order = new Order();  
             order.setAmout(80);  
-            order.setBookingDate(df.parse("2015-07-01"));  
+            order.setBookingDate(df.parse("2019-07-01"));
             User user = new User();  
             user.setLevel(1);  
-            user.setName("Name1");  
+            user.setName("User1");
             order.setUser(user);
-            order.setScore(111);
-            orderList.add(order);  
+            orderList.add(order);
         }  
         {  
             Order order = new Order();  
             order.setAmout(200);  
-            order.setBookingDate(df.parse("2015-07-02"));  
+            order.setBookingDate(df.parse("2019-07-02"));
             User user = new User();
             user.setLevel(2);  
-            user.setName("Name2");  
+            user.setName("User2");
             order.setUser(user);  
             orderList.add(order);  
         }  
         {  
             Order order = new Order();  
             order.setAmout(800);  
-            order.setBookingDate(df.parse("2015-07-03"));  
+            order.setBookingDate(df.parse("2019-07-03"));
             User user = new User();  
             user.setLevel(3);  
-            user.setName("Name3");  
+            user.setName("User3");
             order.setUser(user);  
             orderList.add(order);  
         }  
         {  
             Order order = new Order();  
             order.setAmout(1500);  
-            order.setBookingDate(df.parse("2015-07-04"));  
+            order.setBookingDate(df.parse("2019-07-04"));
             User user = new User();  
             user.setLevel(4);  
-            user.setName("Name4");  
+            user.setName("User4");
             order.setUser(user);  
             orderList.add(order);  
         }  

@@ -13,15 +13,15 @@ import javax.annotation.Resource;
  * @Description:
  */
 @Component
-public class RuleTemplate implements Rule{
+public class RuleTemplate implements Rule {
     @Resource
     private KieContainer kieContainer;
 
     @Override
     public Order execute(Order order) {
-        KieSession ksession = kieContainer.newKieSession();
-        ksession.insert(order);
-        ksession.fireAllRules();
+        KieSession kieSession = kieContainer.newKieSession();
+        kieSession.insert(order);
+        kieSession.fireAllRules();
         return order;
 
     }

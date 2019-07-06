@@ -9,5 +9,11 @@ import com.yunxi.yunxiruleengine.entity.Order;
  * @Description:
  */
 public interface Rule {
+    /**
+     * 规则执行
+     *
+     * @param order
+     * @return
+     */
     Order execute(Order order);
 }

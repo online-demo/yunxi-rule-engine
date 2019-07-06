@@ -31,16 +31,16 @@ public class JavaScoreExample {
             Order order = orderList.get(i);
             if (order.getAmout() <= 100){
                 order.setScore(0);
-                addScore(order);
+                printScore(order);
             }else if(order.getAmout() > 100 && order.getAmout() <= 500){
                 order.setScore(100);
-                addScore(order);
+                printScore(order);
             }else if(order.getAmout() > 500 && order.getAmout() <= 1000){
                 order.setScore(500);
-                addScore(order);
+                printScore(order);
             }else{
                 order.setScore(1000);
-                addScore(order);
+                printScore(order);
             }
         }
     }
@@ -54,21 +54,21 @@ public class JavaScoreExample {
             Order order = orderList.get(i);
             if (order.getAmout() <= 200){
                 order.setScore(0);
-                addScore(order);
+                printScore(order);
             }else if(order.getAmout() > 200 && order.getAmout() <= 1000){
                 order.setScore(100);
-                addScore(order);
+                printScore(order);
             }else if(order.getAmout() > 1000 && order.getAmout() <= 2000){
                 order.setScore(500);
-                addScore(order);
+                printScore(order);
             }else{
                 order.setScore(1000);
-                addScore(order);
+                printScore(order);
             }
         }
     }
 
-    public static void addScore(Order o){
+    public static void printScore(Order o){
         System.out.println("用户" + o.getUser().getName() + "享受额外增加积分: " + o.getScore());  
     }  
       
