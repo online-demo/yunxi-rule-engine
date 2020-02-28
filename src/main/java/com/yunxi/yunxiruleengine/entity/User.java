@@ -1,10 +1,16 @@
 package com.yunxi.yunxiruleengine.entity;
 
 public class User {
-      
-    private String name;//姓名  
-      
-    private int level;//用户级别  
+
+    /**
+     * 姓名
+     */
+    private String name;
+
+    /**
+     * 用户级别
+     */
+    private int level;
   
     public String getName() {  
         return name;  

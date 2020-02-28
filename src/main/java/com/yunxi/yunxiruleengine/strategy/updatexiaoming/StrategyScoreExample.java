@@ -9,7 +9,7 @@ import static com.yunxi.yunxiruleengine.xiaoming.JavaScoreExample.getInitData;
 
 /**
  * @Author: 无双老师【云析学院】
- * @Date: 2019-02-16
+ * @Date: 2020-02-28
  * @Description:
  */
 public class StrategyScoreExample {
@@ -22,18 +22,18 @@ public class StrategyScoreExample {
      */
     public static void strategyVersion() throws Exception {
         List<Order> orderList = getInitData();
-        for (int i=0; i<orderList.size(); i++){
+        for (int i = 0; i < orderList.size(); i++) {
             Order order = orderList.get(i);
-            if (order.getAmout() <= 100){
+            if (order.getAmout() <= 100) {
                 Context context = new Context(new Strategy0());
                 context.executeStrategy(order);
-            }else if(order.getAmout() > 100 && order.getAmout() <= 500){
+            } else if (order.getAmout() > 100 && order.getAmout() <= 500) {
                 Context context = new Context(new Strategy100());
                 context.executeStrategy(order);
-            }else if(order.getAmout() > 500 && order.getAmout() <= 1000){
+            } else if (order.getAmout() > 500 && order.getAmout() <= 1000) {
                 Context context = new Context(new Strategy500());
                 context.executeStrategy(order);
-            }else{
+            } else {
                 Context context = new Context(new Strategy1000());
                 context.executeStrategy(order);
             }

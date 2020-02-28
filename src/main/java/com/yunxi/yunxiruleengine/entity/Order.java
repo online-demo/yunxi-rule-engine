@@ -3,13 +3,24 @@ package com.yunxi.yunxiruleengine.entity;
 import java.util.Date;
 
 public class Order {
-      
-    private Date bookingDate;//下单日期
-      
-    private int amout;//订单原价金额  
-      
-    private User user;//下单人  
-      
+    /**
+     * 下单日期
+      */
+    private Date bookingDate;
+
+    /**
+     * 订单原价金额
+     */
+    private int amout;
+
+    /**
+     * 下单人
+     */
+    private User user;
+
+    /**
+     * 积分
+     */
     private int score;  
       
     public int getScore() {  
